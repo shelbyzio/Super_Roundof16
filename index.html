@@ -1,131 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="my">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE ONE PRO LEAGUE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Serie A Style Round of 16</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            background-color: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .app-container {
-            width: 100%;
-            max-width: 400px;
-            height: 100vh;
-            max-height: 850px;
-            background: #000000;
-            border-radius: 40px;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #222;
-        }
-
-        .top-gradient {
-            background-image: url('https://i.pinimg.com/736x/76/30/e8/7630e860090413703b76303ff460d22a.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 250px;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
-            padding: 50px 25px 25px 25px;
-        }
-
-        .card-bg-img {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-        
-        .card-overlay {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 20px;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            padding: 1rem 1.5rem;
-        }
-
-        .transaction-card {
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            position: relative;
-            margin-bottom: 16px;
-            height: 90px;
-            overflow: hidden;
-            display: block;
-            text-decoration: none;
-        }
-
-        .neon-red:hover { box-shadow: 0 0 20px rgba(239, 68, 68, 0.6); transform: translateY(-2px); }
-        .neon-blue:hover { box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); transform: translateY(-2px); }
-        .neon-green:hover { box-shadow: 0 0 20px rgba(14, 115, 237, 0.6); transform: translateY(-2px); }
-        .neon-purple:hover { box-shadow: 0 0 20px rgba(168, 85, 247, 0.6); transform: translateY(-2px); }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #1e293b; }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
 
-<div class="app-container">
-    <div class="top-gradient"></div>
-
-    <div class="flex-1 p-6 text-white overflow-y-auto">
-        <h2 class="text-xl font-semibold mb-6">PRO LEAGUE | UCL FORMAT</h2>
-
-        <!-- Player Lists -->
-        <a href="https://proleagueplayers.ziokai2212006.workers.dev/" target="_blank" class="transaction-card neon-red card-bg-img" style="background-image: url('https://i.pinimg.com/736x/52/04/da/5204da0a2f719f95b7774fbd01eca40b.jpg');">
-            <div class="card-overlay">
-                <div class="flex-1">
-                    <p class="font-bold text-white text-lg">Player Lists</p>
-                    <p class="text-xs text-gray-400">Tap to view details</p>
+    <header class="bg-[#003399] border-b-4 border-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-3 py-3 flex flex-row justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-white p-1 rounded-lg h-9 w-9 overflow-hidden flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ab/Serie_A_ENILIVE_logo.svg/960px-Serie_A_ENILIVE_logo.svg.png" alt="Serie A" class="h-full w-full object-contain">
+                </div>
+                <div>
+                    <h1 class="text-sm font-black text-white">SERIE <span class="text-white">A</span></h1>
+                    <p class="text-[8px] text-blue-200 font-bold uppercase tracking-widest">ROUND OF 16</p>
                 </div>
             </div>
-        </a>
+        </div>
+    </header>
 
-        <!-- Match Fixtures -->
-        <a href="https://proleague.ziokai2212006.workers.dev/" target="_blank" class="transaction-card neon-green card-bg-img" style="background-image: url('https://i.pinimg.com/1200x/78/b9/73/78b9730d81317bf85f3d8549531596ae.jpg');">
-            <div class="card-overlay">
-                <div class="flex-1">
-                    <p class="font-bold text-white text-lg">Match Fixtures</p>
-                    <p class="text-xs text-gray-400">Tap to view details</p>
-                </div>
+    <main class="max-w-7xl mx-auto px-3 py-5 flex-1 w-full">
+        <div class="grid grid-cols-2 gap-2 mb-5">
+            <div class="bg-white border border-blue-100 p-3 rounded-xl flex items-center gap-2 shadow-sm">
+                <i class="fa-solid fa-shield-halved text-[#003399] text-sm"></i>
+                <div><span class="text-[8px] text-slate-500 block uppercase">TEAMS</span><span class="text-sm font-bold text-slate-800">16</span></div>
             </div>
-        </a>
-
-        <!-- Send Result -->
-        <a href="https://t.me/agust_nadi" target="_blank" class="transaction-card neon-blue card-bg-img" style="background-image: url('https://i.pinimg.com/736x/c7/f1/a5/c7f1a5d5888c5b4bfcaed71baa713372.jpg');">
-            <div class="card-overlay">
-                <div class="flex-1">
-                    <p class="font-bold text-white text-lg">Send Result Here!</p>
-                    <p class="text-xs text-gray-400">Tap to send result</p>
-                </div>
+            <div class="bg-white border border-blue-100 p-3 rounded-xl flex items-center gap-2 shadow-sm">
+                <i class="fa-solid fa-futbol text-[#003399] text-sm"></i>
+                <div><span class="text-[8px] text-slate-500 block uppercase">MATCHES</span><span class="text-sm font-bold text-slate-800">8</span></div>
             </div>
-        </a>
+        </div>
 
-        <!-- Coin Store -->
-        <a href="https://t.me/Profit_Zio" target="_blank" class="transaction-card neon-purple card-bg-img" style="background-image: url('https://pbs.twimg.com/media/F5Zzg2DbAAEALOh.png');">
-            <div class="card-overlay">
-                <div class="flex-1">
-                    <p class="font-bold text-white text-lg">eFootball Coin store</p>
-                    <p class="text-xs text-gray-400">Tap to view details</p>
-                </div>
-            </div>
-        </a>
+        <div class="bg-[#003399] p-3 rounded-xl shadow-lg mb-4">
+            <h2 class="text-sm font-black text-white text-center uppercase tracking-wider">Round of 16 Fixtures</h2>
+        </div>
 
-    </div>
-</div>
+        <div class="grid grid-cols-1 gap-3" id="fixtures-grid">
+            <!-- Matches will be injected here -->
+        </div>
+    </main>
 
+    <script>
+        const TEAMS_LIST = [
+            { id: "INT", name: "Leeds", logo: "https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg", tg: "https://t.me/jelium11" },
+            { id: "MIL", name: "Liverpool", logo: "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg", tg: "https://t.me/Badrul11" },
+            { id: "JUV", name: "Man City", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/250px-Manchester_City_FC_badge.svg.png", tg: "https://t.me/iz_szlai" },
+            { id: "LAZ", name: "Atletcio Madrid", logo: "https://upload.wikimedia.org/wikipedia/en/f/f9/Atletico_Madrid_Logo_2024.svg", tg: "https://t.me/kmyatnyein" },
+            { id: "GIR", name: "Griona", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Girona_FC_Logo.svg/1280px-Girona_FC_Logo.svg.png", tg: "https://t.me/Dean2172" },
+            { id: "FIO", name: "Real Madrid", logo: "https://upload.wikimedia.org/wikipedia/sco/thumb/5/56/Real_Madrid_CF.svg/960px-Real_Madrid_CF.svg.png", tg: "https://t.me/AalDDin12" },
+            { id: "COM", name: "Atalanta", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeE7lk4xdSGzlpEwx0VtBxbSY4vWtg3FodRakWKGWBEQ&s=10", tg: "https://t.me/Phaint_Phaint" },
+            { id: "NAP", name: "", logo: "", tg: "" },
+            { id: "ATA", name: "", logo: "", tg: "" },
+            { id: "PAR", name: "Parma", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_Parma_Calcio_1913_%28adozione_2016%29.svg/1280px-Logo_Parma_Calcio_1913_%28adozione_2016%29.svg.png", tg: "https://t.me/alpheo_x" },
+            { id: "VER", name: "Yarmanya FC", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/Yarmanya_United_F.C._logo.png/250px-Yarmanya_United_F.C._logo.png", tg: "https://t.me/Xuman88" },
+            { id: "TOR", name: "Rakhine United", logo: "https://upload.wikimedia.org/wikipedia/en/e/e2/Rakhine_United_Football_Club.jpg", tg: "https://t.me/kenzjust" },
+            { id: "UDI", name: "ISPE FC", logo: "https://upload.wikimedia.org/wikipedia/en/9/98/I.S.P.E_F.C._logo.png", tg: "https://t.me/DjOmega4102005" },
+            { id: "GEN", name: "Napoli", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SSC_Neapel.svg/250px-SSC_Neapel.svg.png", tg: "https://t.me/alpheo_x" },
+            { id: "CAG", name: "Athletic Bilbao", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Club_Athletic_Bilbao_logo.svg/250px-Club_Athletic_Bilbao_logo.svg.png", tg: "https://t.me/Alcohol0987" },
+            { id: "EMP", name: "Yadanarbon FC", logo: "https://upload.wikimedia.org/wikipedia/en/8/83/Yadanabon_FC.png", tg: "https://t.me/Ranger13102003" }
+        ];
+
+        const KNOCKOUT_MATCHES = [
+            { home: 'INT', away: 'EMP' },
+            { home: 'MIL', away: 'CAG' },
+            { home: 'JUV', away: 'GEN' },
+            { home: 'LAZ', away: 'UDI' },
+            { home: 'GIR', away: 'TOR' },
+            { home: 'FIO', away: 'VER' },
+            { home: 'COM', away: 'PAR' },
+            { home: 'NAP', away: 'ATA' }
+        ];
+
+        function getTeamHtml(team, isAway = false) {
+            const hasLink = team.tg && team.tg !== "#";
+            const alignment = isAway ? "flex-row-reverse text-right" : "flex-row text-left";
+            const classes = `flex items-center gap-2 w-[40%] ${alignment} ${hasLink ? "cursor-pointer hover:opacity-70" : ""}`;
+            
+            const content = `<img src="${team.logo}" class="w-8 h-8 object-contain"><span class="text-[10px] font-bold truncate w-20">${team.name}</span>`;
+            
+            if (hasLink) {
+                return `<a href="${team.tg}" target="_blank" class="${classes}">${content}</a>`;
+            }
+            return `<div class="${classes}">${content}</div>`;
+        }
+
+        function renderFixtures() {
+            const container = document.getElementById('fixtures-grid');
+            container.innerHTML = '';
+            
+            KNOCKOUT_MATCHES.forEach(match => {
+                const h = TEAMS_LIST.find(t => t.id === match.home);
+                const a = TEAMS_LIST.find(t => t.id === match.away);
+                
+                const card = document.createElement('div');
+                card.className = "bg-white border border-slate-100 rounded-xl p-3 flex items-center justify-between shadow-sm hover:shadow-md transition-all";
+                
+                card.innerHTML = `
+                    ${getTeamHtml(h, false)}
+                    <div class="flex flex-col items-center w-[20%]"><span class="text-[#003399] font-black text-[10px]">VS</span></div>
+                    ${getTeamHtml(a, true)}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        window.onload = renderFixtures;
+    </script>
 </body>
 </html>
