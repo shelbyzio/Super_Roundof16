@@ -2,49 +2,37 @@
 <html lang="my">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>THE ONE SUPER CUP KNOCKOUT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ONE SUPER CUP - BRACKET</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f1f5f9; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-btn.active { background-color: #003399; color: white; border-bottom: 3px solid #fbbf24; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="pb-10">
 
-    <header class="bg-[#003399] border-b-4 border-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-3 py-3 flex flex-row justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="bg-white p-1 rounded-lg h-9 w-9 overflow-hidden flex items-center justify-center">
-                    <img src="https://i.pinimg.com/736x/49/2c/50/492c50ccd980032ad25040e5b3e4b3cf.jpg" alt="Serie A" class="h-full w-full object-contain">
-                </div>
-                <div>
-                    <h1 class="text-sm font-black text-white">THE ONE <span class="text-white">SUPER CUP</span></h1>
-                    <p class="text-[8px] text-blue-200 font-bold uppercase tracking-widest">ROUND OF 16</p>
-                </div>
-            </div>
-        </div>
+    <header class="bg-[#003399] p-5 shadow-lg sticky top-0 z-50">
+        <h1 class="text-white text-center font-black tracking-widest text-lg">THE ONE SUPER CUP</h1>
     </header>
 
-    <main class="max-w-7xl mx-auto px-3 py-5 flex-1 w-full">
-        <div class="grid grid-cols-2 gap-2 mb-5">
-            <div class="bg-white border border-blue-100 p-3 rounded-xl flex items-center gap-2 shadow-sm">
-                <i class="fa-solid fa-shield-halved text-[#003399] text-sm"></i>
-                <div><span class="text-[8px] text-slate-500 block uppercase">TEAMS</span><span class="text-sm font-bold text-slate-800">16</span></div>
-            </div>
-            <div class="bg-white border border-blue-100 p-3 rounded-xl flex items-center gap-2 shadow-sm">
-                <i class="fa-solid fa-futbol text-[#003399] text-sm"></i>
-                <div><span class="text-[8px] text-slate-500 block uppercase">MATCHES</span><span class="text-sm font-bold text-slate-800">8</span></div>
-            </div>
+    <main class="max-w-2xl mx-auto px-3 py-5">
+        <!-- Tabs Navigation -->
+        <div class="grid grid-cols-4 gap-1 mb-6 bg-white p-1 rounded-xl shadow-sm">
+            <button onclick="openTab('ro16')" class="tab-btn active px-2 py-3 rounded-lg text-[10px] font-bold uppercase transition">R16</button>
+            <button onclick="openTab('qf')" class="tab-btn px-2 py-3 rounded-lg text-[10px] font-bold uppercase transition">QF</button>
+            <button onclick="openTab('sf')" class="tab-btn px-2 py-3 rounded-lg text-[10px] font-bold uppercase transition">SF</button>
+            <button onclick="openTab('final')" class="tab-btn px-2 py-3 rounded-lg text-[10px] font-bold uppercase transition">Final</button>
         </div>
 
-        <div class="bg-[#003399] p-3 rounded-xl shadow-lg mb-4">
-            <h2 class="text-sm font-black text-white text-center uppercase tracking-wider">Round of 16 Fixtures</h2>
-        </div>
-
-        <div class="grid grid-cols-1 gap-3" id="fixtures-grid">
-            <!-- Matches will be injected here -->
+        <div id="content-container">
+            <section id="ro16" class="tab-content active bg-white rounded-2xl shadow-sm p-2"></section>
+            <section id="qf" class="tab-content bg-white rounded-2xl shadow-sm p-2"></section>
+            <section id="sf" class="tab-content bg-white rounded-2xl shadow-sm p-2"></section>
+            <section id="final" class="tab-content bg-white rounded-2xl shadow-sm p-2"></section>
         </div>
     </main>
 
@@ -53,66 +41,80 @@
             { id: "INT", name: "Leeds", logo: "https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg", tg: "https://t.me/jelium11" },
             { id: "MIL", name: "Liverpool", logo: "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg", tg: "https://t.me/Badrul11" },
             { id: "JUV", name: "Man City", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/250px-Manchester_City_FC_badge.svg.png", tg: "https://t.me/iz_szlai" },
-            { id: "LAZ", name: "Atletcio Madrid", logo: "https://upload.wikimedia.org/wikipedia/en/f/f9/Atletico_Madrid_Logo_2024.svg", tg: "https://t.me/kmyatnyein" },
-            { id: "GIR", name: "Griona", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Girona_FC_Logo.svg/1280px-Girona_FC_Logo.svg.png", tg: "https://t.me/Dean2172" },
+            { id: "LAZ", name: "Atletico Madrid", logo: "https://upload.wikimedia.org/wikipedia/en/f/f9/Atletico_Madrid_Logo_2024.svg", tg: "https://t.me/kmyatnyein" },
+            { id: "GIR", name: "Girona", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Girona_FC_Logo.svg/1280px-Girona_FC_Logo.svg.png", tg: "https://t.me/Dean2172" },
             { id: "FIO", name: "Real Madrid", logo: "https://upload.wikimedia.org/wikipedia/sco/thumb/5/56/Real_Madrid_CF.svg/960px-Real_Madrid_CF.svg.png", tg: "https://t.me/AalDDin12" },
             { id: "COM", name: "Atalanta", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeE7lk4xdSGzlpEwx0VtBxbSY4vWtg3FodRakWKGWBEQ&s=10", tg: "https://t.me/Phaint_Phaint" },
-            { id: "NAP", name: "Man United", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1280px-Manchester_United_FC_crest.svg.png", tg: "https://t.me/Hemaljr10" },
             { id: "ATA", name: "Lazio", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/S.S._Lazio_badge.svg/1280px-S.S._Lazio_badge.svg.png", tg: "https://t.me/tnmnt46" },
-            { id: "PAR", name: "Parma", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_Parma_Calcio_1913_%28adozione_2016%29.svg/1280px-Logo_Parma_Calcio_1913_%28adozione_2016%29.svg.png", tg: "https://t.me/alpheo_x" },
-            { id: "VER", name: "Yarmanya FC", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/Yarmanya_United_F.C._logo.png/250px-Yarmanya_United_F.C._logo.png", tg: "https://t.me/Xuman88" },
-            { id: "TOR", name: "Rakhine United", logo: "https://upload.wikimedia.org/wikipedia/en/e/e2/Rakhine_United_Football_Club.jpg", tg: "https://t.me/kenzjust" },
             { id: "UDI", name: "ISPE FC", logo: "https://upload.wikimedia.org/wikipedia/en/9/98/I.S.P.E_F.C._logo.png", tg: "https://t.me/DjOmega4102005" },
             { id: "GEN", name: "Napoli", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SSC_Neapel.svg/250px-SSC_Neapel.svg.png", tg: "https://t.me/alpheo_x" },
             { id: "CAG", name: "Athletic Bilbao", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Club_Athletic_Bilbao_logo.svg/250px-Club_Athletic_Bilbao_logo.svg.png", tg: "https://t.me/Alcohol0987" },
-            { id: "EMP", name: "Yadanarbon FC", logo: "https://upload.wikimedia.org/wikipedia/en/8/83/Yadanabon_FC.png", tg: "https://t.me/Ranger13102003" }
+            { id: "EMP", name: "Yadanarbon FC", logo: "https://upload.wikimedia.org/wikipedia/en/8/83/Yadanabon_FC.png", tg: "https://t.me/Ranger13102003" },
+            { id: "VER", name: "Yarmanya FC", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/Yarmanya_United_F.C._logo.png/250px-Yarmanya_United_F.C._logo.png", tg: "https://t.me/Xuman88" },
+            { id: "PAR", name: "Parma", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_Parma_Calcio_1913_%28adozione_2016%29.svg/1280px-Logo_Parma_Calcio_1913_%28adozione_2016%29.svg.png", tg: "https://t.me/alpheo_x" },
+            { id: "TOR", name: "Rakhine United", logo: "https://upload.wikimedia.org/wikipedia/en/e/e2/Rakhine_United_Football_Club.jpg", tg: "https://t.me/kenzjust" },
+            { id: "MUN", name: "Man United", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1280px-Manchester_United_FC_crest.svg.png", tg: "https://t.me/Hemaljr10" }
         ];
 
-        const KNOCKOUT_MATCHES = [
-            { home: 'INT', away: 'EMP' },
-            { home: 'MIL', away: 'CAG' },
-            { home: 'JUV', away: 'GEN' },
-            { home: 'LAZ', away: 'UDI' },
-            { home: 'GIR', away: 'TOR' },
-            { home: 'FIO', away: 'VER' },
-            { home: 'COM', away: 'PAR' },
-            { home: 'NAP', away: 'ATA' }
-        ];
+        const STAGES = {
+            ro16: [
+                { home: 'Leeds', away: 'Yadanarbon FC', score: '5 - 4' },
+                { home: 'Liverpool', away: 'Athletic Bilbao', score: '14 - 8' },
+                { home: 'Man City', away: 'Napoli', score: '6 - 5' },
+                { home: 'Atletico Madrid', away: 'ISPE FC', score: '4 - 2' },
+                { home: 'Girona', away: 'Rakhine United', score: '4 - 1' },
+                { home: 'Real Madrid', away: 'Yarmanya FC', score: '5 - 3' },
+                { home: 'Atalanta', away: 'Parma', score: '7 - 6' },
+                { home: 'Man United', away: 'Lazio', score: '8 - 9' }
+            ],
+            qf: [
+                { home: 'Leeds', away: 'Liverpool', score: 'TBD' },
+                { home: 'Man City', away: 'Atletico Madrid', score: 'TBD' },
+                { home: 'Girona', away: 'Real Madrid', score: 'TBD' },
+                { home: 'Atalanta', away: 'Lazio', score: 'TBD' }
+            ],
+            sf: [
+                { home: '', away: '', score: 'Vs' },
+                { home: 'TBA', away: 'TBA', score: 'Vs' }
+            ],
+            final: [
+                { home: 'TBA', away: 'TBA', score: 'Vs' }
+            ]
+        };
 
-        function getTeamHtml(team, isAway = false) {
-            const hasLink = team.tg && team.tg !== "#";
-            const alignment = isAway ? "flex-row-reverse text-right" : "flex-row text-left";
-            const classes = `flex items-center gap-2 w-[40%] ${alignment} ${hasLink ? "cursor-pointer hover:opacity-70" : ""}`;
-            
-            const content = `<img src="${team.logo}" class="w-8 h-8 object-contain"><span class="text-[10px] font-bold truncate w-20">${team.name}</span>`;
-            
-            if (hasLink) {
-                return `<a href="${team.tg}" target="_blank" class="${classes}">${content}</a>`;
-            }
-            return `<div class="${classes}">${content}</div>`;
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
         }
 
-        function renderFixtures() {
-            const container = document.getElementById('fixtures-grid');
-            container.innerHTML = '';
+        function createMatchCard(match) {
+            const hTeam = TEAMS_LIST.find(t => t.name === match.home) || { name: match.home, logo: 'https://placehold.co/40x40/eee/333?text=?', tg: '#' };
+            const aTeam = TEAMS_LIST.find(t => t.name === match.away) || { name: match.away, logo: 'https://placehold.co/40x40/eee/333?text=?', tg: '#' };
             
-            KNOCKOUT_MATCHES.forEach(match => {
-                const h = TEAMS_LIST.find(t => t.id === match.home);
-                const a = TEAMS_LIST.find(t => t.id === match.away);
-                
-                const card = document.createElement('div');
-                card.className = "bg-white border border-slate-100 rounded-xl p-3 flex items-center justify-between shadow-sm hover:shadow-md transition-all";
-                
-                card.innerHTML = `
-                    ${getTeamHtml(h, false)}
-                    <div class="flex flex-col items-center w-[20%]"><span class="text-[#003399] font-black text-[10px]">VS</span></div>
-                    ${getTeamHtml(a, true)}
-                `;
-                container.appendChild(card);
+            const div = document.createElement('div');
+            div.className = "flex items-center justify-between p-4 border-b last:border-0 border-slate-50";
+            
+            const homeLink = hTeam.tg !== '#' ? `onclick="window.open('${hTeam.tg}', '_blank')"` : '';
+            const awayLink = aTeam.tg !== '#' ? `onclick="window.open('${aTeam.tg}', '_blank')"` : '';
+
+            div.innerHTML = `
+                <div class="flex items-center gap-3 w-[40%] cursor-pointer" ${homeLink}><img src="${hTeam.logo}" class="w-8 h-8 object-contain"><span class="text-[12px] font-bold truncate">${hTeam.name}</span></div>
+                <div class="text-black font-black text-xs w-[20%] text-center bg-slate-100 py-1 px-2 rounded-md">${match.score}</div>
+                <div class="flex items-center gap-3 w-[40%] justify-end text-right cursor-pointer" ${awayLink}><span class="text-[12px] font-bold truncate">${aTeam.name}</span><img src="${aTeam.logo}" class="w-8 h-8 object-contain"></div>
+            `;
+            return div;
+        }
+
+        function renderAll() {
+            Object.keys(STAGES).forEach(key => {
+                const container = document.getElementById(key);
+                STAGES[key].forEach(m => container.appendChild(createMatchCard(m)));
             });
         }
 
-        window.onload = renderFixtures;
+        window.onload = renderAll;
     </script>
 </body>
 </html>
