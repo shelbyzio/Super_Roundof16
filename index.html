@@ -77,7 +77,7 @@
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
-        .dark ::webkit-scrollbar-thumb { background: #475569; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
     </style>
 </head>
 <body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen pb-12">
@@ -152,44 +152,52 @@
         // Full list of teams with updated entries for Brighton, Man United, and Lazio
         const TEAMS_LIST = [
             { id: "MCI", name: "Man City", logo: "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg", tg: "https://t.me/Sammykaung" },
-            { id: "BET", name: "Real Betis", logo: "https://upload.wikimedia.org/wikipedia/en/1/13/Real_betis_logo.svg", tg: "https://t.me/KeeRan_kawor" },
+            { id: "BET", name: "Real Betis", logo: "https://thumb.wikimedia.org/wikipedia/en/thumb/2/2f/Real_Betis_2022_logo.svg/1280px-Real_Betis_2022_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail", tg: "https://t.me/KeeRan_kawor" },
             { id: "SEV", name: "Sevilla", logo: "https://upload.wikimedia.org/wikipedia/en/3/3b/Sevilla_FC_logo.svg", tg: "https://t.me/Junnpe" },
-            { id: "BHA", name: "Brighton", logo: "https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg", tg: "https://t.me/Naindjjd" },
+            { id: "BHA", name: "Brighton", logo: "https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/b385/live/29c9aac0-df52-11f0-a8dc-93c15fe68710.png", tg: "https://t.me/Naindjjd" },
             { id: "ARS", name: "Arsenal", logo: "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg", tg: "https://t.me/bobominhein" },
             { id: "GIR", name: "Girona", logo: "https://upload.wikimedia.org/wikipedia/en/f/f7/Girona_FC_Logo.svg", tg: "https://t.me/APH_Design_Studio_97" },
             { id: "ATH", name: "Athletic Bilbao", logo: "https://upload.wikimedia.org/wikipedia/en/9/98/Club_Athletic_Bilbao_logo.svg", tg: "https://t.me/BWhite099" },
             { id: "MUN", name: "Man United", logo: "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg", tg: "https://t.me/Wolfy21002" },
-            { id: "COM", name: "Como", logo: "https://upload.wikimedia.org/wikipedia/en/7/7b/Como_1907_logo.svg", tg: "https://t.me/Sakmkl" },
+            { id: "COM", name: "Como", logo: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Calcio_Como_-_logo_%28Italy%2C_2019-%29.svg/960px-Calcio_Como_-_logo_%28Italy%2C_2019-%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail", tg: "https://t.me/Sakmkl" },
             { id: "BAY", name: "Bayern Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg", tg: "https://t.me/Kavin_9356" },
             { id: "STU", name: "Stuttgart", logo: "https://upload.wikimedia.org/wikipedia/commons/e/eb/VfB_Stuttgart_1893_Logo.svg", tg: "https://t.me/yoho26" },
             { id: "ROM", name: "Roma", logo: "https://upload.wikimedia.org/wikipedia/en/f/f7/AS_Roma_logo_%282017%29.svg", tg: "https://t.me/Garniya" },
             { id: "LAZ", name: "Lazio", logo: "https://upload.wikimedia.org/wikipedia/en/c/ce/S.S._Lazio_badge.svg", tg: "https://t.me/aungnayzan" },
-            { id: "FRA", name: "Frankfurt", logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/Eintracht_Frankfurt_Logo.svg", tg: "https://t.me/Bs134679" },
+            { id: "FRA", name: "Frankfurt", logo: "https://thumb.wikimedia.org/wikipedia/en/thumb/7/7e/Eintracht_Frankfurt_crest.svg/1280px-Eintracht_Frankfurt_crest.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail", tg: "https://t.me/Bs134679" },
             { id: "FRE", name: "Freiburg", logo: "https://upload.wikimedia.org/wikipedia/en/6/6d/SC_Freiburg_logo.svg", tg: "https://t.me/native_burmese" },
             { id: "TOR", name: "Torino", logo: "https://upload.wikimedia.org/wikipedia/en/2/2e/Torino_FC_Logo.svg", tg: "https://t.me/htetwaiaung21112002" },
+            { id: "TOT", name: "Tottenham", logo: "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg", tg: "https://t.me/iz_szlai" },
+            { id: "INT", name: "Inter Milan", logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg", tg: "https://t.me/zayd0408" },
+            { id: "NEW", name: "Newcastle", logo: "https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg", tg: "https://t.me/zeusace0" },
+            { id: "NAP", name: "Napoli", logo: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/SSC_Napoli_2025_%28white_and_azure%29.svg/1280px-SSC_Napoli_2025_%28white_and_azure%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail", tg: "https://t.me/khant200455" },
+            { id: "VIL", name: "Villarreal", logo: "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b9/Villarreal_CF_logo-en.svg/1280px-Villarreal_CF_logo-en.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail", tg: "https://t.me/HainnH20" },
+            { id: "LEV", name: "Leverkusen", logo: "https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg", tg: "#" },
+            { id: "RSO", name: "Real Sociedad", logo: "https://upload.wikimedia.org/wikipedia/en/f/f1/Real_Sociedad_logo.svg", tg: "https://t.me/KeeRan_kawor" },
+            { id: "DOR", name: "Dortmund", logo: "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg", tg: "#" },
             { id: "TBD", name: "TBD", logo: "https://via.placeholder.com/40?text=?", tg: "#" }
         ];
 
         const STAGES = {
             playoff: [
-                { home: 'Man City', away: 'Real Betis', score: 'Vs' },
-                { home: 'Sevilla', away: 'Brighton', score: 'Vs' },
-                { home: 'Arsenal', away: 'Girona', score: 'Vs' },
-                { home: 'Athletic Bilbao', away: 'Man United', score: 'Vs' },
-                { home: 'Como', away: 'Bayern Munich', score: 'Vs' },
-                { home: 'Stuttgart', away: 'Roma', score: 'Vs' },
-                { home: 'Lazio', away: 'Frankfurt', score: 'Vs' },
-                { home: 'Freiburg', away: 'Torino', score: 'Vs' }
+                { home: 'Man City', away: 'Real Betis', score: '8 - 4' },
+                { home: 'Sevilla', away: 'Brighton', score: '7 - 3' },
+                { home: 'Arsenal', away: 'Girona', score: '4 - 6' },
+                { home: 'Athletic Bilbao', away: 'Man United', score: '0 - 3' },
+                { home: 'Como', away: 'Bayern Munich', score: '4 - 3' },
+                { home: 'Stuttgart', away: 'Roma', score: '8 - 9' },
+                { home: 'Lazio', away: 'Frankfurt', score: '5 - 1' },
+                { home: 'Freiburg', away: 'Torino', score: '7 - 2' }
             ],
             ro16: [
-                { home: 'TBD', away: 'TBD', score: 'Vs' },
-                { home: 'TBD', away: 'TBD', score: 'Vs' },
-                { home: 'TBD', away: 'TBD', score: 'Vs' },
-                { home: 'TBD', away: 'TBD', score: 'Vs' },
-                { home: 'TBD', away: 'TBD', score: 'Vs' },
-                { home: 'TBD', away: 'TBD', score: 'Vs' },
-                { home: 'TBD', away: 'TBD', score: 'Vs' },
-                { home: 'TBD', away: 'TBD', score: 'Vs' }
+                { home: 'Man City', away: 'Sevilla', score: 'Vs' },
+                { home: 'Girona', away: 'Man United', score: 'Vs' },
+                { home: 'Como', away: 'Roma', score: 'Vs' },
+                { home: 'Lazio', away: 'Freiburg', score: 'Vs' },
+                { home: 'Tottenham', away: 'Inter Milan', score: 'Vs' },
+                { home: 'Newcastle', away: 'Napoli', score: 'Vs' },
+                { home: 'Villarreal', away: 'Leverkusen', score: 'Vs' },
+                { home: 'Real Sociedad', away: 'Dortmund', score: 'Vs' }
             ],
             qf: [
                 { home: 'TBD', away: 'TBD', score: 'Vs' },
