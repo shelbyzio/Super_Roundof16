@@ -124,16 +124,16 @@
 
         <!-- Stage Navigation Tabs -->
         <div id="tabsContainer" class="grid grid-cols-5 gap-1 mb-6 bg-white dark:bg-slate-800 p-1.5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
-            <button onclick="openTab('playoff', event)" class="tab-btn active px-1 py-2.5 rounded-lg text-[10px] sm:text-xs font-extrabold uppercase transition text-center">Play Off</button>
-            <button onclick="openTab('ro16', event)" class="tab-btn px-1 py-2.5 rounded-lg text-[10px] sm:text-xs font-extrabold uppercase transition text-center">R16</button>
+            <button onclick="openTab('playoff', event)" class="tab-btn px-1 py-2.5 rounded-lg text-[10px] sm:text-xs font-extrabold uppercase transition text-center">Play Off</button>
+            <button onclick="openTab('ro16', event)" class="tab-btn active px-1 py-2.5 rounded-lg text-[10px] sm:text-xs font-extrabold uppercase transition text-center">R16</button>
             <button onclick="openTab('qf', event)" class="tab-btn px-1 py-2.5 rounded-lg text-[10px] sm:text-xs font-extrabold uppercase transition text-center">QF</button>
             <button onclick="openTab('sf', event)" class="tab-btn px-1 py-2.5 rounded-lg text-[10px] sm:text-xs font-extrabold uppercase transition text-center">SF</button>
             <button onclick="openTab('final', event)" class="tab-btn px-1 py-2.5 rounded-lg text-[10px] sm:text-xs font-extrabold uppercase transition text-center">Final</button>
         </div>
 
         <div id="content-container">
-            <section id="playoff" class="tab-content active bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-3 border border-slate-200 dark:border-slate-700"></section>
-            <section id="ro16" class="tab-content bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-3 border border-slate-200 dark:border-slate-700"></section>
+            <section id="playoff" class="tab-content bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-3 border border-slate-200 dark:border-slate-700"></section>
+            <section id="ro16" class="tab-content active bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-3 border border-slate-200 dark:border-slate-700"></section>
             <section id="qf" class="tab-content bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-3 border border-slate-200 dark:border-slate-700"></section>
             <section id="sf" class="tab-content bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-3 border border-slate-200 dark:border-slate-700"></section>
             <section id="final" class="tab-content bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-3 border border-slate-200 dark:border-slate-700"></section>
@@ -190,20 +190,20 @@
                 { home: 'Freiburg', away: 'Torino', score: '7 - 2' }
             ],
             ro16: [
-                { home: 'Man City', away: 'Sevilla', score: 'Vs' },
-                { home: 'Girona', away: 'Man United', score: 'Vs' },
-                { home: 'Como', away: 'Roma', score: 'Vs' },
-                { home: 'Lazio', away: 'Freiburg', score: 'Vs' },
-                { home: 'Tottenham', away: 'Inter Milan', score: 'Vs' },
+                { home: 'Man City', away: 'Sevilla', score: '6 - 3' },
+                { home: 'Girona', away: 'Man United', score: '11 - 8' },
+                { home: 'Como', away: 'Roma', score: '11 - 2' },
+                { home: 'Lazio', away: 'Freiburg', score: '3 - 12' },
+                { home: 'Tottenham', away: 'Inter Milan', score: '5 - 4' },
                 { home: 'Newcastle', away: 'Napoli', score: 'Vs' },
-                { home: 'Villarreal', away: 'Leverkusen', score: 'Vs' },
-                { home: 'Real Sociedad', away: 'Dortmund', score: 'Vs' }
+                { home: 'Villarreal', away: 'Leverkusen', score: '9 - 6' },
+                { home: 'Real Sociedad', away: 'Dortmund', score: '15 - 9' }
             ],
             qf: [
-                { home: 'TBD', away: 'TBD', score: 'Vs' },
-                { home: 'TBD', away: 'TBD', score: 'Vs' },
-                { home: 'TBD', away: 'TBD', score: 'Vs' },
-                { home: 'TBD', away: 'TBD', score: 'Vs' }
+                { home: 'Man City', away: 'Girona', score: 'Vs' },
+                { home: 'Como', away: 'Freiburg', score: 'Vs' },
+                { home: 'Tottenham', away: 'TBD', score: 'Vs' },
+                { home: 'Villarreal', away: 'Real Sociedad', score: 'Vs' }
             ],
             sf: [
                 { home: 'TBD', away: 'TBD', score: 'Vs' },
